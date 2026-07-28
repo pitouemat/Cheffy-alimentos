@@ -118,11 +118,18 @@ function renderFeatures(featuresGrid) {
         return;
     }
 
+    const iconColors = [
+        'from-purple-500 to-indigo-500',
+        'from-violet-500 to-purple-600',
+        'from-indigo-500 to-purple-500',
+    ];
+
     featuresGrid.innerHTML = features.map((feature, index) => `
         <div
             class="feature-card"
-            style="animation: fadeInUp 0.6s ease-out ${index * 0.1}s both;"
+            style="animation: fadeInUp 0.6s ease-out ${index * 0.08}s both;"
         >
+            <div class="feature-card-top-border"></div>
             <div class="feature-icon">
                 <i class="${feature.icon}"></i>
             </div>
