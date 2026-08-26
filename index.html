@@ -27,7 +27,7 @@
                     <a href="#relatorios" class="nav-link">Relatórios</a>
                     <a href="#precos" class="nav-link">Preços</a>
                     <a href="#faq" class="nav-link">FAQ</a>
-                    <button class="btn btn-primary">Comece Agora</button>
+                    <button class="btn btn-primary" type="button" data-open-signup>Comece Agora</button>
                 </nav>
                 <button class="menu-toggle" id="menuToggle">
                     <span></span>
@@ -46,7 +46,7 @@
                     <h1 class="hero-title">Organize sua cozinha.<br>Aumente seus lucros.</h1>
                     <p class="hero-subtitle">Cheffy é um software especialista para empreendedores de alimentos. Aumente as vendas da sua marmitaria, confeitaria, restaurante com nosso sistema inteligente. </p>
                     <div class="hero-buttons">
-                        <button class="btn btn-primary btn-lg">Comece Agora <i class="fas fa-arrow-right"></i></button>
+                        <button class="btn btn-primary btn-lg" type="button" data-open-signup>Comece Agora <i class="fas fa-arrow-right"></i></button>
                         <button class="btn btn-outline btn-lg">Conhecer Mais</button>
                     </div>
                     <div class="hero-note">
@@ -55,7 +55,46 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="Dashboard.png" alt="Cheffy Dashboard" class="hero-img">
+                    <div class="hero-carousel" id="heroCarousel" tabindex="0" aria-label="Demonstração das telas do Cheffy">
+                        <div class="hero-carousel-viewport">
+                            <div class="hero-slide is-active" id="hero-slide-0" data-hero-slide="0" role="group" aria-roledescription="slide" aria-label="1 de 4 — Painel">
+                                <img src="hero-painel.png" alt="Tela do Painel do Cheffy" class="hero-img">
+                            </div>
+                            <div class="hero-slide" id="hero-slide-1" data-hero-slide="1" role="group" aria-roledescription="slide" aria-label="2 de 4 — Relatórios" hidden>
+                                <img src="hero-relatorios.png" alt="Tela de Relatórios do Cheffy" class="hero-img">
+                            </div>
+                            <div class="hero-slide" id="hero-slide-2" data-hero-slide="2" role="group" aria-roledescription="slide" aria-label="3 de 4 — Precificação" hidden>
+                                <img src="hero-precificacao.png" alt="Tela de Precificação do Cheffy" class="hero-img">
+                            </div>
+                            <div class="hero-slide" id="hero-slide-3" data-hero-slide="3" role="group" aria-roledescription="slide" aria-label="4 de 4 — Encomendas" hidden>
+                                <img src="hero-encomendas.png" alt="Tela de Encomendas do Cheffy" class="hero-img">
+                            </div>
+                        </div>
+
+                        <div class="hero-carousel-toolbar">
+                            <button class="hero-carousel-arrow" type="button" data-hero-prev aria-label="Imagem anterior">
+                                <i class="fas fa-arrow-left"></i>
+                            </button>
+                            <div class="hero-carousel-dots" role="tablist" aria-label="Selecionar imagem da demonstração">
+                                <button class="hero-carousel-dot is-active" type="button" role="tab" aria-selected="true" aria-controls="hero-slide-0" data-hero-dot="0" aria-label="Mostrar Painel"></button>
+                                <button class="hero-carousel-dot" type="button" role="tab" aria-selected="false" aria-controls="hero-slide-1" data-hero-dot="1" aria-label="Mostrar Relatórios" tabindex="-1"></button>
+                                <button class="hero-carousel-dot" type="button" role="tab" aria-selected="false" aria-controls="hero-slide-2" data-hero-dot="2" aria-label="Mostrar Precificação" tabindex="-1"></button>
+                                <button class="hero-carousel-dot" type="button" role="tab" aria-selected="false" aria-controls="hero-slide-3" data-hero-dot="3" aria-label="Mostrar Encomendas" tabindex="-1"></button>
+                            </div>
+                            <button class="hero-carousel-arrow" type="button" data-hero-next aria-label="Próxima imagem">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+
+                        <div class="hero-carousel-caption" aria-live="polite">
+                            <span class="hero-carousel-caption-icon"><i class="fas fa-sparkles"></i></span>
+                            <div>
+                                <strong id="heroCarouselTitle">Painel de gestão</strong>
+                                <span id="heroCarouselMeta">Uma visão completa do seu negócio</span>
+                            </div>
+                            <span class="hero-carousel-autoplay"><i class="fas fa-rotate"></i> Girando automaticamente</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -162,8 +201,13 @@
             <p class="section-subtitle">Calcule o preço certo para cada produto com base em custos reais e margem de lucro</p>
 
             <div class="pricing-smart-grid">
+                <div class="image-group">
+                     <div class="pricing-smart-image ">
+                    <img src="precificacao-screenshot.png" alt="Tela de Precificação do Cheffy" class="pricing-img" style="margin-bottom: 10px;">
+                </div>
                 <div class="pricing-smart-image">
-                    <img src="precificacao-screenshot.png" alt="Tela de Precificação do Cheffy" class="pricing-img">
+                    <img src="calc.png" alt="Tela de Precificação do Cheffy" class="pricing-img">
+                </div>
                 </div>
                 <div class="pricing-smart-content">
                     <div class="pricing-smart-features">
@@ -283,57 +327,143 @@
     <!-- Relatórios Section -->
     <section id="relatorios" class="reports">
         <div class="container">
-            <h2 class="section-title">Relatórios Detalhados</h2>
-            <p class="section-subtitle">Tome decisões estratégicas com base em dados reais do seu negócio</p>
+            <div class="reports-intro">
+                <div>
+                    <span class="reports-kicker"><i class="fas fa-sparkles"></i> Central de inteligência</span>
+                    <h2 class="section-title">Relatórios que transformam dados em decisões</h2>
+                    <p class="section-subtitle">Uma visão prática para entender o que vende, o que dá lucro e onde sua cozinha pode evoluir.</p>
+                </div>
+                <div class="reports-intro-note">
+                    <i class="fas fa-shield-halved"></i>
+                    <span>Dados demonstrativos para você conhecer a experiência antes de conectar sua operação.</span>
+                </div>
+            </div>
 
-            <div class="reports-grid">
-                <div class="report-card">
-                    <div class="report-icon">
-                        <i class="fas fa-chart-bar"></i>
+            <div class="reports-command-bar" aria-label="Controles de período dos relatórios">
+                <div class="reports-command-copy">
+                    <span class="report-eyebrow"><i class="fas fa-sliders"></i> Centro de controle</span>
+                    <strong>Qual período você quer entender?</strong>
+                    <small>Troque a lente para encontrar o próximo movimento da sua cozinha.</small>
+                </div>
+                <div class="report-periods" role="group" aria-label="Selecionar período">
+                    <button class="report-period" type="button" data-report-period="7">Últimos 7 dias</button>
+                    <button class="report-period is-active" type="button" data-report-period="30">Últimos 30 dias</button>
+                    <button class="report-period" type="button" data-report-period="mes">Este mês</button>
+                </div>
+                <div class="reports-command-meta"><i class="fas fa-arrows-rotate"></i><span id="reportPeriodMeta">Comparando com os 30 dias anteriores</span></div>
+            </div>
+
+            <div class="reports-layout">
+                <div class="reports-showcase" aria-label="Prévia visual da tela de Relatórios">
+                    <div class="reports-window-bar">
+                        <div class="reports-window-brand">
+                            <span class="reports-brand-mark">C</span>
+                            <span>Cheffy <small>Gestão da cozinha</small></span>
+                        </div>
+                        <div class="reports-window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
                     </div>
-                    <h3>Relatório de Vendas</h3>
-                    <p>Analise suas vendas por período, produto mais vendido, horários de pico e tendências de consumo.</p>
+                    <div class="reports-window-body">
+                        <div class="reports-window-sidebar" aria-hidden="true">
+                            <span class="is-active"><i class="fas fa-chart-pie"></i> Relatórios</span>
+                            <span><i class="fas fa-cart-shopping"></i> Vendas</span>
+                            <span><i class="fas fa-boxes-stacked"></i> Estoque</span>
+                            <span><i class="fas fa-users"></i> Clientes</span>
+                            <span><i class="fas fa-sliders"></i> Configurações</span>
+                        </div>
+                        <div class="reports-window-content">
+                            <div class="reports-window-heading"><span>Relatórios</span><span class="reports-window-search"><i class="fas fa-magnifying-glass"></i> Buscar dados</span></div>
+                            <div class="reports-window-filters"><span>Hoje</span><span>Últimos 7 dias</span><span>Produto: Todos</span><span>Canal: Todos</span></div>
+                            <img src="relatorios-referencia.png" alt="Captura de referência da tela de Relatórios do Cheffy" class="reports-reference-image">
+                        </div>
+                    </div>
+                    <div class="reports-showcase-caption"><i class="fas fa-image"></i><span>Referência visual aplicada ao novo conteúdo</span><span class="reports-caption-line"></span><strong>5 visões em uma tela</strong></div>
                 </div>
 
-                <div class="report-card">
-                    <div class="report-icon">
-                        <i class="fas fa-coins"></i>
+                <div class="reports-demo" aria-label="Demonstração interativa dos relatórios">
+                    <div class="reports-demo-header">
+                        <div>
+                            <span class="report-eyebrow">Demonstração interativa</span>
+                            <h3 id="reportDemoTitle">Visão de vendas</h3>
+                        </div>
+                        <span class="reports-live"><span></span> Atualizado hoje</span>
                     </div>
-                    <h3>Relatório Financeiro</h3>
-                    <p>Acompanhe receitas, despesas, fluxo de caixa e margem de lucro com gráficos detalhados.</p>
-                </div>
 
-                <div class="report-card">
-                    <div class="report-icon">
-                        <i class="fas fa-box-open"></i>
+                    <div class="report-tabs" role="tablist" aria-label="Tipos de relatório">
+                        <button class="report-tab is-active" id="report-tab-vendas" type="button" role="tab" aria-selected="true" aria-controls="report-panel-vendas" data-report-tab="vendas"><i class="fas fa-chart-line"></i><span>Vendas</span></button>
+                        <button class="report-tab" id="report-tab-financeiro" type="button" role="tab" aria-selected="false" aria-controls="report-panel-financeiro" data-report-tab="financeiro"><i class="fas fa-coins"></i><span>Financeiro</span></button>
+                        <button class="report-tab" id="report-tab-estoque" type="button" role="tab" aria-selected="false" aria-controls="report-panel-estoque" data-report-tab="estoque"><i class="fas fa-box-open"></i><span>Estoque</span></button>
+                        <button class="report-tab" id="report-tab-clientes" type="button" role="tab" aria-selected="false" aria-controls="report-panel-clientes" data-report-tab="clientes"><i class="fas fa-users"></i><span>Clientes</span></button>
+                        <button class="report-tab" id="report-tab-produtos" type="button" role="tab" aria-selected="false" aria-controls="report-panel-produtos" data-report-tab="produtos"><i class="fas fa-utensils"></i><span>Produtos</span></button>
                     </div>
-                    <h3>Relatório de Estoque</h3>
-                    <p>Veja consumo de insumos, produtos com estoque baixo, itens próximos ao vencimento e desperdícios.</p>
-                </div>
 
-                <div class="report-card">
-                    <div class="report-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Relatório de Clientes</h3>
-                    <p>Identifique seus melhores clientes, frequência de pedidos, ticket médio e padrões de compra.</p>
-                </div>
+                    <div class="report-status" id="reportStatus" role="status" aria-live="polite"><i class="fas fa-circle-info"></i><span>Período selecionado: últimos 30 dias</span><button type="button" class="report-export" data-report-export><i class="fas fa-download"></i> Exportar visão</button></div>
 
-                <div class="report-card">
-                    <div class="report-icon">
-                        <i class="fas fa-utensils"></i>
+                    <div class="reports-metrics" id="reportMetrics">
+                        <div class="report-metric"><span>Pedidos</span><strong>22</strong><small><i class="fas fa-arrow-up"></i> 12,4% vs. período anterior</small></div>
+                        <div class="report-metric report-metric-accent"><span>Receita no período</span><strong>R$ 4.754,46</strong><small>média diária de R$ 158,48</small></div>
+                        <div class="report-metric"><span>Ticket médio</span><strong>R$ 216,11</strong><small>por pedido concluído</small></div>
+                        <div class="report-metric report-metric-positive"><span>Margem estimada</span><strong>25,1%</strong><small><i class="fas fa-arrow-trend-up"></i> acima do período anterior</small></div>
                     </div>
-                    <h3>Relatório de Produtos</h3>
-                    <p>Descubra quais produtos são mais rentáveis, quais têm margem baixa e onde focar seus esforços.</p>
-                </div>
 
-                <div class="report-card">
-                    <div class="report-icon">
-                        <i class="fas fa-file-export"></i>
+                    <div class="report-panel is-visible" id="report-panel-vendas" role="tabpanel" aria-labelledby="report-tab-vendas">
+                        <div class="report-panel-card report-chart-card">
+                            <div class="report-card-heading"><div><span class="report-eyebrow">Desempenho</span><h4>Evolução das vendas</h4></div><span class="report-card-period">30 dias <i class="fas fa-chevron-down"></i></span></div>
+                            <div class="report-chart-bars report-sales-bars" aria-label="Gráfico de vendas por período"><span style="--bar-height: 34%"><b>08/07</b></span><span style="--bar-height: 46%"><b>09/07</b></span><span style="--bar-height: 21%"><b>10/07</b></span><span style="--bar-height: 38%"><b>12/07</b></span><span style="--bar-height: 27%"><b>14/07</b></span><span style="--bar-height: 72%"><b>04/08</b></span><span style="--bar-height: 94%"><b>11/08</b></span></div>
+                            <div class="report-chart-axis"><span>R$ 0</span><span>R$ 800</span><span>R$ 1.600</span></div>
+                        </div>
+                        <div class="report-panel-card">
+                            <div class="report-card-heading"><div><span class="report-eyebrow">Ranking</span><h4>Mais vendidos</h4></div><i class="fas fa-arrow-up-right-dots report-heading-icon"></i></div>
+                            <div class="report-ranking"><div><span>Bom-bocado de coco</span><strong>22 un.</strong><em>R$ 734,64</em></div><div><span>Bolo de fubá c/ goiabada</span><strong>21 un.</strong><em>R$ 682,90</em></div><div><span>Cookie Laranja</span><strong>21 un.</strong><em>R$ 399,64</em></div></div>
+                        </div>
                     </div>
-                    <h3>Exportação e Compartilhamento</h3>
-                    <p>Exporte relatórios em PDF ou Excel e compartilhe com sócios, contadores ou investidores.</p>
+
+                    <div class="report-panel" id="report-panel-financeiro" role="tabpanel" aria-labelledby="report-tab-financeiro" hidden>
+                        <div class="report-panel-card report-chart-card">
+                            <div class="report-card-heading"><div><span class="report-eyebrow">Visão financeira</span><h4>Fluxo de caixa por mês</h4></div><span class="report-card-period">Jul — Ago</span></div>
+                            <div class="report-cashflow"><div><span>Receita</span><strong>R$ 5.254,46</strong><i style="--line-width: 92%"></i></div><div><span>Custos + taxas</span><strong>R$ 3.562,89</strong><i style="--line-width: 66%"></i></div><div><span>Resultado líquido</span><strong>R$ 1.423,57</strong><i style="--line-width: 28%"></i></div></div>
+                        </div>
+                        <div class="report-panel-card"><div class="report-card-heading"><div><span class="report-eyebrow">DRE simplificado</span><h4>Como o lucro é formado</h4></div><i class="fas fa-file-invoice-dollar report-heading-icon"></i></div><div class="report-ledger"><div><span>Receita de vendas</span><strong>R$ 4.754,46</strong></div><div><span>(−) Custo dos produtos</span><strong class="is-negative">-R$ 2.979,97</strong></div><div><span>(−) Taxas de canais</span><strong class="is-negative">-R$ 582,92</strong></div><div class="is-total"><span>Lucro líquido</span><strong>R$ 1.423,57</strong></div></div></div>
+                    </div>
+
+                    <div class="report-panel" id="report-panel-estoque" role="tabpanel" aria-labelledby="report-tab-estoque" hidden>
+                        <div class="report-panel-card"><div class="report-card-heading"><div><span class="report-eyebrow">Atenção</span><h4>Estoque abaixo do mínimo</h4></div><span class="report-count-alert">21 itens</span></div><div class="report-stock-list"><div><span><i class="fas fa-circle-exclamation"></i> Açúcar de confeiteiro</span><strong>0 g <small>/ 1.000 g</small></strong></div><div><span><i class="fas fa-circle-exclamation"></i> Gotas de chocolate</span><strong>109 g <small>/ 300 g</small></strong></div><div><span><i class="fas fa-circle-exclamation"></i> Amarrilho</span><strong>130 un. <small>/ 200 un.</small></strong></div></div></div>
+                        <div class="report-panel-card"><div class="report-card-heading"><div><span class="report-eyebrow">Inventário</span><h4>Resumo do período</h4></div><i class="fas fa-warehouse report-heading-icon"></i></div><div class="report-stock-summary"><div><span>Valor em estoque</span><strong>R$ 1.232,06</strong></div><div><span>Consumo</span><strong>R$ 0,00</strong></div><div><span>Perdas</span><strong>R$ 0,00</strong></div></div><p class="report-empty-note"><i class="fas fa-check-circle"></i> Nenhum lote vencendo nos próximos 15 dias.</p></div>
+                    </div>
+
+                    <div class="report-panel" id="report-panel-clientes" role="tabpanel" aria-labelledby="report-tab-clientes" hidden>
+                        <div class="report-panel-card"><div class="report-card-heading"><div><span class="report-eyebrow">Relacionamento</span><h4>Clientes que compram mais</h4></div><i class="fas fa-heart report-heading-icon"></i></div><div class="report-client-cards"><div><strong>7</strong><span>clientes ativos</span></div><div><strong>43%</strong><span>recorrentes</span></div><div><strong>R$ 235,59</strong><span>ticket médio</span></div></div><div class="report-ranking"><div><span><i class="fas fa-crown"></i> Ifood</span><strong>4 pedidos</strong><em>R$ 1.207,15</em></div><div><span>Matheus Aguiar</span><strong>3 pedidos</strong><em>R$ 722,54</em></div><div><span>Heitor Crevellari</span><strong>2 pedidos</strong><em>R$ 473,84</em></div></div></div>
+                        <div class="report-panel-card report-insight-card"><i class="fas fa-lightbulb"></i><div><span class="report-eyebrow">Insight do Cheffy</span><h4>Crie uma ação de recorrência</h4><p>Três clientes já compram com frequência. Um lembrete de recompra pode aumentar o retorno sem elevar o custo de aquisição.</p></div></div>
+                    </div>
+
+                    <div class="report-panel" id="report-panel-produtos" role="tabpanel" aria-labelledby="report-tab-produtos" hidden>
+                        <div class="report-panel-card report-chart-card"><div class="report-card-heading"><div><span class="report-eyebrow">Rentabilidade</span><h4>Produtos mais lucrativos</h4></div><span class="report-card-period">Margem alvo: 30%</span></div><div class="report-profit-list"><div><span>Bom-bocado de coco</span><i><b style="--profit-width: 96%"></b></i><strong>R$ 189,98</strong></div><div><span>Brownie Trad.</span><i><b style="--profit-width: 88%"></b></i><strong>R$ 180,40</strong></div><div><span>Bolo de fubá</span><i><b style="--profit-width: 78%"></b></i><strong>R$ 164,05</strong></div><div><span>Cookie Laranja</span><i><b style="--profit-width: 58%"></b></i><strong>R$ 114,09</strong></div></div></div>
+                        <div class="report-panel-card"><div class="report-card-heading"><div><span class="report-eyebrow">Oportunidade</span><h4>Margens para revisar</h4></div><span class="report-count-alert">7 itens</span></div><div class="report-ledger"><div><span>Produtos vendidos</span><strong>16 de 16</strong></div><div><span>Margem média</span><strong>25,1%</strong></div><div class="is-total"><span>Próximo passo</span><strong>Revisar preços</strong></div></div></div>
+                    </div>
                 </div>
+            </div>
+
+            <div class="reports-decision-grid" aria-label="Recomendações do Cheffy">
+                <div class="reports-decision-card reports-decision-featured">
+                    <div class="reports-decision-topline"><span class="reports-priority"><i class="fas fa-bolt"></i> Prioridade de hoje</span><span class="reports-decision-score">92% de confiança</span></div>
+                    <div class="reports-decision-body"><span class="reports-decision-icon"><i class="fas fa-tags"></i></span><div><h3>Revise os 7 produtos abaixo da margem alvo</h3><p>Uma pequena atualização de preço pode proteger seu lucro sem mudar o mix que já vende bem.</p></div></div>
+                    <button class="report-action-link" type="button" data-report-action="produtos">Ver rentabilidade <i class="fas fa-arrow-right"></i></button>
+                </div>
+                <div class="reports-decision-card">
+                    <div class="reports-decision-topline"><span class="reports-priority reports-priority-warm"><i class="fas fa-box-open"></i> Próximo alerta</span><span class="reports-decision-score">21 itens</span></div>
+                    <div class="reports-decision-body"><span class="reports-decision-icon reports-decision-icon-warm"><i class="fas fa-cart-shopping"></i></span><div><h3>Monte sua próxima compra com segurança</h3><p>Açúcar, chocolate e amarrilho estão abaixo do mínimo configurado no estoque.</p></div></div>
+                    <button class="report-action-link report-action-link-warm" type="button" data-report-action="estoque">Ver alertas de estoque <i class="fas fa-arrow-right"></i></button>
+                </div>
+                <div class="reports-decision-card">
+                    <div class="reports-decision-topline"><span class="reports-priority reports-priority-green"><i class="fas fa-heart"></i> Oportunidade</span><span class="reports-decision-score">43% recorrentes</span></div>
+                    <div class="reports-decision-body"><span class="reports-decision-icon reports-decision-icon-green"><i class="fas fa-user-plus"></i></span><div><h3>Ative uma jornada de recompra</h3><p>Três clientes já voltam com frequência: uma campanha simples pode aumentar o retorno.</p></div></div>
+                    <button class="report-action-link report-action-link-green" type="button" data-report-action="clientes">Ver clientes ativos <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <div class="report-takeaways" aria-label="Benefícios dos relatórios">
+                <div class="report-takeaway"><span class="report-takeaway-icon"><i class="fas fa-bullseye"></i></span><div><strong>Decida com clareza</strong><p>Encontre padrões e oportunidades sem depender de planilhas.</p></div></div>
+                <div class="report-takeaway"><span class="report-takeaway-icon"><i class="fas fa-bolt"></i></span><div><strong>Aja no momento certo</strong><p>Alertas de estoque e margem mostram onde agir primeiro.</p></div></div>
+                <div class="report-takeaway"><span class="report-takeaway-icon"><i class="fas fa-file-export"></i></span><div><strong>Compartilhe resultados</strong><p>Exporte a visão escolhida para conversar com seu time.</p></div></div>
             </div>
         </div>
     </section>
@@ -362,7 +492,7 @@
                         <ul class="pricing-features" id="pricingFeatures">
                             <!-- Pricing features will be inserted here by JavaScript -->
                         </ul>
-                        <button class="btn btn-primary btn-block">Comece Agora</button>
+                        <button class="btn btn-primary btn-block" type="button" data-open-signup>Comece Agora</button>
                     </div>
                 </div>
                 
@@ -384,7 +514,7 @@
                         <ul class="pricing-features" id="pricingFeaturesAnual">
                             <!-- Funcionalidades do plano anual -->
                         </ul>
-                        <button class="btn btn-primary btn-block">Comece Agora</button>
+                        <button class="btn btn-primary btn-block" type="button" data-open-signup>Comece Agora</button>
                     </div>
                 </div>
                 
@@ -419,9 +549,72 @@
         <div class="container">
             <h2 class="section-title">Pronto para organizar sua cozinha?</h2>
             <p class="section-subtitle">Junte-se aos confeiteiros que já possuem um negócio organizado de verdade</p>
-            <button class="btn btn-white btn-lg">Comece Seu Teste Agora <i class="fas fa-arrow-right"></i></button>
+            <button class="btn btn-white btn-lg" type="button" data-open-signup>Comece Seu Teste Agora <i class="fas fa-arrow-right"></i></button>
         </div>
     </section>
+
+    <!-- Formulário de cadastro -->
+    <div class="signup-modal" id="signupModal" hidden>
+        <div class="signup-modal-backdrop" data-close-signup></div>
+        <section class="signup-dialog" role="dialog" aria-modal="true" aria-labelledby="signupTitle" aria-describedby="signupDescription">
+            <button class="signup-close" type="button" aria-label="Fechar formulário" data-close-signup>
+                <i class="fas fa-xmark"></i>
+            </button>
+
+            <div class="signup-dialog-header">
+                <span class="signup-eyebrow"><i class="fas fa-sparkles"></i> Comece sua jornada</span>
+                <h2 id="signupTitle">Teste o Cheffy agora</h2>
+                <p id="signupDescription">Preencha seus dados e descubra como organizar sua cozinha e aumentar seus lucros.</p>
+            </div>
+
+            <form class="signup-form" id="signupForm" novalidate>
+                <div class="signup-field">
+                    <label for="signupName">Nome</label>
+                    <div class="signup-input-wrap">
+                        <i class="fas fa-user" aria-hidden="true"></i>
+                        <input id="signupName" name="name" type="text" autocomplete="name" placeholder="Como podemos chamar você?" required>
+                    </div>
+                    <small class="signup-error" data-error-for="signupName"></small>
+                </div>
+
+                <div class="signup-field">
+                    <label for="signupEmail">E-mail</label>
+                    <div class="signup-input-wrap">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <input id="signupEmail" name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com" required>
+                    </div>
+                    <small class="signup-error" data-error-for="signupEmail"></small>
+                </div>
+
+                <div class="signup-field">
+                    <label for="signupWhatsapp">WhatsApp</label>
+                    <div class="signup-input-wrap">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        <input id="signupWhatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 99999-9999" maxlength="15" required>
+                    </div>
+                    <small class="signup-error" data-error-for="signupWhatsapp"></small>
+                </div>
+
+                <label class="signup-consent">
+                    <input type="checkbox" name="consent" required>
+                    <span>Concordo em receber informações sobre o Cheffy pelos canais informados.</span>
+                </label>
+
+                <button class="btn btn-primary signup-submit" type="submit">
+                    Quero começar meu teste <i class="fas fa-arrow-right"></i>
+                </button>
+                <p class="signup-privacy"><i class="fas fa-lock" aria-hidden="true"></i> Seus dados são usados somente para entrar em contato com você.</p>
+                <p class="signup-feedback" id="signupFeedback" role="status" aria-live="polite"></p>
+            </form>
+
+            <div class="signup-success" id="signupSuccess" role="status" aria-live="polite" hidden>
+                <span class="signup-success-icon"><i class="fas fa-check"></i></span>
+                <h3 data-success-title>Cadastro recebido!</h3>
+                <p>Obrigado, <strong data-success-name></strong>. <span data-success-copy>Em breve entraremos em contato para ajudar você a começar.</span></p>
+                <button class="btn btn-outline" type="button" data-close-signup>Fechar</button>
+            </div>
+        </section>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">

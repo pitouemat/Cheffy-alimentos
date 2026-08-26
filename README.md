@@ -119,6 +119,26 @@ const faqs = [
 4. Implementar dark mode
 5. Adicionar mais animações
 
+## 📊 Nova experiência de Relatórios
+
+A seção **Relatórios** ganhou um showcase interativo inspirado no painel de gestão do Cheffy. Além da captura visual de referência, a página apresenta cinco visões demonstrativas — Vendas, Financeiro, Estoque, Clientes e Produtos — com indicadores, rankings, alertas e insights de decisão.
+
+Os dados exibidos nesta landing page são demonstrativos e foram organizados para comunicar a experiência do produto. Eles não substituem a integração com os dados da aplicação autenticada. A imagem `relatorios-referencia.png` é usada como referência visual local dentro do preview responsivo.
+
+### Interações disponíveis
+
+As abas da demonstração podem ser acionadas por mouse ou teclado. As setas direcionais, `Home` e `End` navegam entre as visões, enquanto o botão **Exportar visão** apresenta um estado de confirmação demonstrativo. A barra de controle permite alternar entre últimos 7 dias, últimos 30 dias e este mês. O bloco de recomendações conecta rentabilidade, estoque e recorrência de clientes a ações de navegação dentro do próprio relatório. O layout se adapta a telas pequenas, tablets e desktops.
+
+## 🖼️ Carrossel do hero
+
+A imagem estática do hero foi substituída por um carrossel automático com quatro telas reais do Cheffy: `hero-painel.png`, `hero-relatorios.png`, `hero-precificacao.png` e `hero-encomendas.png`. Os slides alternam a cada 3 segundos, pausam ao passar o mouse ou ao receber foco e podem ser controlados pelas setas, pelos indicadores ou pelas teclas `ArrowLeft` e `ArrowRight`. O carrossel também respeita a preferência de redução de movimento do sistema.
+
+## 📝 Formulário de cadastro
+
+Os botões **Comece Agora** e **Comece Seu Teste Agora** abrem um formulário responsivo com os campos obrigatórios **nome**, **e-mail** e **WhatsApp**. O formulário inclui máscara para telefone brasileiro, validação de preenchimento, validação de e-mail, aceite de contato, fechamento por botão, clique fora ou tecla `Esc`, foco inicial e navegação por teclado.
+
+O arquivo `script.js` já está preparado para enviar os cadastros a um Web App do Google Apps Script. Quando a constante `CHEFFY_LEAD_ENDPOINT` recebe a URL de implantação, cada cadastro é registrado na aba `Leads` de uma planilha Google e uma notificação é enviada para o endereço configurado. Enquanto a URL estiver vazia, o site permanece em modo de demonstração e usa o `localStorage` do navegador. Consulte `CONFIGURACAO-GOOGLE-SHEETS.md` para ativar o recebimento real.
+
 ## 📄 Licença
 
 Projeto criado para Cheffy Alimentos - 2026
